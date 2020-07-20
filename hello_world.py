@@ -1,3 +1,2 @@
-import streamlit
-value = streamlit.text_input("Write a Text")
-streamlit.write("You Wrote : ", value)
+import streamlit as st
+st.write("Hello World")

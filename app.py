@@ -25,8 +25,8 @@ def main():
         nltk.download('punkt')
         nltk.download('stopwords')
         import heapq
-        number=st.text_input('How many sentences long do you want your summary to be?'
-        sent_num = int(number))
+        number=st.text_input('How many sentences long do you want your summary to be?')
+        sent_num = int(number)
         if sent_num>0:
             formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )  
             formatted_article_text = re.sub(r'\s+', ' ', formatted_article_text)

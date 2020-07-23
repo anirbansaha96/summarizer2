@@ -8,18 +8,18 @@ def main():
     url_topull= st.text_input("Enter the Wikipedia URL to pull - ")
     scraped_data = urllib.request.urlopen(url_topull)  
     article = scraped_data.read()
-    @st.cache
-    parsed_article = bs.BeautifulSoup(article,'lxml')
-    @st.cache
+
+    parsed_article=bs.BeautifulSoup(article,'lxml')
+
     paragraphs = parsed_article.find_all('p')
 
     article_text = ""
-    @st.cache
+
     for p in paragraphs:  
         article_text += p.text
     article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)  
     article_text = re.sub(r'\s+', ' ', article_text)
-    @st.cache
+
     import nltk
     nltk.download('punkt')
     nltk.download('stopwords')
@@ -28,7 +28,7 @@ def main():
     formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )  
     formatted_article_text = re.sub(r'\s+', ' ', formatted_article_text)
     sentence_list = nltk.sent_tokenize(article_text)  
-    @st.cache
+
     stopwords = nltk.corpus.stopwords.words('english')
     word_frequencies = {}  
     for word in nltk.word_tokenize(formatted_article_text):  

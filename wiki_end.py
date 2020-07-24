@@ -1,4 +1,4 @@
-class wiki_end():
+class wiki_end:
   def get_wiki_data(url_topull):
     scraped_data = urllib.request.urlopen(url_topull)  
     article = scraped_data.read()

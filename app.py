@@ -2,13 +2,13 @@ import streamlit as st
 import bs4 as bs  
 import urllib.request  
 import re
-from wiki_end import wiki_end
+import wiki_end
 
 def main():
     st.title("Wikipedia Summarizer")
     url_topull= st.text_input("Enter the Wikipedia URL to pull - ")
     if url_topull!='':
-        article_text=get_wiki_data(url_topull)
+        article_text=wiki_end.get_wiki_data(url_topull)
         import nltk
         nltk.download('punkt')
         nltk.download('stopwords')

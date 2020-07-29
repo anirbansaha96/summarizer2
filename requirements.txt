@@ -1,5 +1,5 @@
 streamlit==0.62.0
-gensim
+summa
 bs4
 lxml
 nltk

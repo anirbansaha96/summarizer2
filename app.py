@@ -2,7 +2,8 @@ import streamlit as st
 import bs4 as bs  
 import urllib.request  
 import re
-from gensim.summarization import summarize
+from summa import summarizer
+from summa import keywords
 
 def main():
     st.title("Wikipedia Summarizer")
@@ -22,9 +23,11 @@ def main():
         article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)  
         article_text = re.sub(r'\s+', ' ', article_text)
         
-        summary=summarize(article_text,ratio=0.05)        
+        summary=summarizer.summarize(article_text,ratio=0.025)        
         st.markdown("# Summary: ")
-        st.write(summary)   
+        st.write(summary) 
+        st.markdown("# Keywords: ")
+        st.write(keywords.keywords(article_text,ratio=0.001))   
     
 if __name__ == '__main__':
     main()

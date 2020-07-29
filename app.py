@@ -27,7 +27,7 @@ def main():
         st.markdown("# Summary: ")
         st.write(summary) 
         st.markdown("# Keywords: ")
-        st.write(keywords.keywords(article_text,ratio=0.001))   
+        st.write(keywords.keywords(article_text,ratio=0.005))   
     
 if __name__ == '__main__':
     main()

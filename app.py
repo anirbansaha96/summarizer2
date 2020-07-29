@@ -22,7 +22,7 @@ def main():
         article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)  
         article_text = re.sub(r'\s+', ' ', article_text)
         
-        summary=summarize(article_text,ratio=0.005)        
+        summary=summarize(article_text,ratio=0.05)        
         st.markdown("# Summary: ")
         st.write(summary)   
     

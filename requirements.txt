@@ -1,2 +1,5 @@
-transformers
-streamlit
+streamlit==0.62.0
+gensim
+bs4
+lxml
+nltk
